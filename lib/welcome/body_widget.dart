@@ -12,7 +12,6 @@ class BodyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      // width: 500,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -26,22 +25,26 @@ class BodyWidget extends StatelessWidget {
                   fontSize: 60,
                   color: Colors.purple[900]),
             ),
-
             SizedBox(height: size.height * 0.05),
-
             SvgPicture.asset(
               'assets/icons/login.svg',
               height: 300,
             ),
-
             SizedBox(height: size.height * 0.05),
-
-            ButtonWidget(text: "Login", color: Colors.purple[900]),
-
+            ButtonWidget(
+                text: "LOGIN",
+                color: Colors.purple[900],
+                press: () {
+                  print('Clicked On Login');
+                }),
             SizedBox(height: size.height * 0.02),
-
-            ButtonWidget(text: "Sign Up", color: Colors.pink),
-            // AssetImage('assets/icons/chat.svg'),
+            ButtonWidget(
+              text: "SIGN UP",
+              color: Colors.pink,
+              press: () {
+                print('Clicked On Sign Up');
+              },
+            ),
           ],
         ),
       ),

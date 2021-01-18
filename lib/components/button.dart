@@ -7,8 +7,8 @@ class ButtonWidget extends StatelessWidget {
   final Color color, textColor;
   const ButtonWidget({
     Key key,
-    this.text,
-    this.press,
+    @required this.text,
+    @required this.press,
     this.color,
     this.textColor = Colors.white,
   }) : super(key: key);
@@ -24,7 +24,10 @@ class ButtonWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           minWidth: 250,
           color: color,
-          onPressed: () {},
+          onPressed: this.press,
+          onLongPress: () {
+            print('on long press');
+          },
           child: Text(text,
               style: GoogleFonts.lato(color: textColor, fontSize: 20)),
         ),
