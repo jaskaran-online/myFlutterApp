@@ -35,6 +35,7 @@ class BodyWidget extends StatelessWidget {
                 text: "LOGIN",
                 color: Colors.purple[900],
                 press: () {
+                  Navigator.pushNamed(context, '/login');
                   print('Clicked On Login');
                 }),
             SizedBox(height: size.height * 0.02),
